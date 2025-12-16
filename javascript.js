@@ -1,15 +1,15 @@
-// Should randomly return rock, paper, scissor
+// Should randomly return rock, paper, scissors
 // FUNCTION getComputerChoice()
-// make getComputerChoice() return rock, paper, scissor, according to if Math.random() is smaller bigger than 0.33
+// make getComputerChoice() return rock, paper, scissors, according to if Math.random() is smaller bigger than 0.33
 
-function randomInteger(num1, num2) {
+function randomInteger() {
     return Math.floor( Math.random() * 3 ) + 1;
 }
 
 function getComputerChoice() {
     let result = randomInteger();
     if ( result > 2 ) {
-        return "scissor";
+        return "scissors";
     }
     else if ( result > 1 ) {
         return "paper";
@@ -19,12 +19,9 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    let promptText = `Write your choice: 
-        rock 
-        paper
-        scissor`
-    let result = prompt( promptText )
-    return result;
+    let promptText = `Choose: rock paper scissors`
+    let choice = prompt( promptText )
+    return choice;
 }
 
 // console.log(getHumanChoice());
@@ -33,7 +30,7 @@ function playRound( humanChoice, computerChoice ) {
     const humanChoiceLowerCase = humanChoice.toLowerCase();
     if ( humanChoiceLowerCase != computerChoice ) {
         if ( humanChoiceLowerCase === "rock" ) {
-            if ( computerChoice === "scissor" ) {
+            if ( computerChoice === "scissors" ) {
                 console.log( `You win, ${humanChoiceLowerCase} beats ${computerChoice}` )
                 // return humanScore += 1;
                 return "human";
@@ -47,7 +44,7 @@ function playRound( humanChoice, computerChoice ) {
         }
         // human-> paper 
         else if ( humanChoiceLowerCase === "paper" ) {
-            if (computerChoice == "scissor") {
+            if (computerChoice == "scissors") {
                 console.log( `You lose, ${computerChoice} beats ${humanChoiceLowerCase}` )
                 // return computerScore += 1; 
                 return "computer";
@@ -59,7 +56,7 @@ function playRound( humanChoice, computerChoice ) {
                 return "human";
             }
         }
-        // human -> scissor
+        // human -> scissors
         else {
             if ( computerChoice === "paper" ) {
                 console.log( `You win, ${humanChoiceLowerCase} beats ${computerChoice}` )
