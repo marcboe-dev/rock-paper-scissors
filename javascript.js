@@ -2,13 +2,16 @@
 // FUNCTION getComputerChoice()
 // make getComputerChoice() return rock, paper, scissor, according to if Math.random() is smaller bigger than 0.33
 
+function randomInteger(num1, num2) {
+    return Math.floor( Math.random() * 3 ) + 1;
+}
 
 function getComputerChoice() {
-    let result = Math.random();
-    if ( result > 0.666 ) {
+    let result = randomInteger();
+    if ( result > 2 ) {
         return "scissor";
     }
-    else if ( result > 0.333 ) {
+    else if ( result > 1 ) {
         return "paper";
     }
     else return "rock";
